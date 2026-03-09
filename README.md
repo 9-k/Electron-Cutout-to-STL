@@ -44,6 +44,8 @@ The second script, a macro in FreeCAD, converts the .SVG file into a .STL. No us
 7. Let the computer do its thing. An export window will automatically appear. Select a place to save the .STL file.
 <img width="967" height="663" alt="image" src="https://github.com/user-attachments/assets/c2c4179d-faff-421a-8f6a-54ff79950140" />
 
+8. Repeat for all needed cutouts in the plan.
+
 ## Slicer
 1. Import your .STL file to the slicer software to generate instructions the 3D printer can understand.
 2. Take your sliced file (probably gcode unless you have some proprietary stuff going on) to your 3D printer and print!
