@@ -3,6 +3,8 @@ In response to our clinic's interest in making an electron cutout factor library
 The first script, a read-only (no script approval needed - yay!) script in Eclipse, converts the cutouts in Eclipse into an .SVG file and adds a printing base and two indexing arms.
 The second script, a macro in FreeCAD, converts the .SVG file into a .STL. No user experience with FreeCAD is needed.
 
+Most 6x6 and 10x10 prints are complete in under 2 hours. With the correct STL and printer settings, a 25x25 large scar boost negative will print in 7 hours (overnight).
+
 # Required Software
 1. Varian Eclipse
 2. FreeCAD
