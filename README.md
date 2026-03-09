@@ -13,7 +13,8 @@ The second script, a macro in FreeCAD, converts the .SVG file into a .STL. No us
 1. Download FreeCAD. It's about half a gigabyte, and portable versions exist. My IT allowed it to be installed - yours should too.
 2. Download the BlockToSVG.esapi.dll file in this repository (or build the .cs file yourself). Put it somewhere you can get to in Eclipse.
 3. Download the Cutout_To_STL.FCMacro macro in this repository. To add it to FreeCAD, open FreeCAD, select Macro on the top left user bar, then note the user macros location at the bottom of the dialog:
-<img width="655" height="530" alt="image" src="https://github.com/user-attachments/assets/c9c1f2ac-e184-4f9f-a134-f9b2a35fa161" />
+<img width="655" height="530" alt="image" src="https://github.com/user-attachments/assets/d9df1d62-a9d4-4688-9ed2-6c32f0130700" />
+
 
 4. Move the macro into this user macros location. Alternatively, just copy the text in the .FCMacro macro in this repository, then, in FreeCAD, select Macros > Create > name the file > paste > save > run.
 
