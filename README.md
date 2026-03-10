@@ -1,9 +1,10 @@
 # Introduction
-In response to our clinic's interest in making an electron cutout factor library, I created these two scripts to transform cutouts in the Varian Eclipse Treatment Planning System into .STL files. These form negatives about which Cerrobend (Wood's metal) can be poured, forming the prescribed cutout. This decreases opportunity for error (such as incorrect cutout printing distance, incorrect styrofoam cutout shape, incorrect cutout placement in frame), while requiring less hands-on time from the dosimetrist or physicist (just set it and let it print autonomously)!
+In response to our clinic's interest in making an electron cutout factor library, I created these two scripts to transform cutouts in the Varian Eclipse Treatment Planning System into .STL files. These form negatives about which Cerrobend (Wood's metal) can be poured, forming the prescribed cutout. This decreases opportunity for error (such as incorrect cutout printing distance, incorrect styrofoam cutout shape, incorrect cutout placement in frame), while requiring less hands-on time from the dosimetrist or physicist (just set it and let it print autonomously)! This script is designed only for Varian-style electron cutout frames - sorry Elekta users!
+
 The first script, a read-only (no script approval needed - yay!) script in Eclipse, converts the cutouts in Eclipse into an .SVG file and adds a printing base and two indexing arms.
 The second script, a macro in FreeCAD, converts the .SVG file into a .STL. No user experience with FreeCAD is needed.
 
-Most 6x6 and 10x10 prints are complete in under 2 hours. With the correct STL and printer settings, a 25x25 large scar boost negative will print in 7 hours (overnight).
+Most 6x6 and 10x10 prints are complete in under 2 hours. With the correct STL and printer settings, a 25x25 diagonal large scar boost mold will print in 7 hours (overnight).
 
 # Required Software
 1. Varian Eclipse
@@ -13,10 +14,9 @@ Most 6x6 and 10x10 prints are complete in under 2 hours. With the correct STL an
 # Procedure
 ## First Time Setup
 1. Download FreeCAD. It's about half a gigabyte, and portable versions exist. My IT allowed it to be installed - yours should too.
-2. Download the BlockToSVG.esapi.dll file in this repository (or build the .cs file yourself). Put it somewhere you can get to in Eclipse.
-3. Download the Cutout_To_STL.FCMacro macro in this repository. To add it to FreeCAD, open FreeCAD, select Macro > Macros on the top left user bar, then note the user macros location at the bottom of the dialog that appears:
+2. Download the CutoutToSVG.esapi.dll file in this repository (or build the .cs file yourself). Put it somewhere you can get to in Eclipse.
+3. Download the CutoutToSTL.FCMacro macro in this repository. To add it to FreeCAD, open FreeCAD, select Macro > Macros on the top left user bar, then note the user macros location at the bottom of the dialog that appears:
 <img width="655" height="530" alt="image" src="https://github.com/user-attachments/assets/d9df1d62-a9d4-4688-9ed2-6c32f0130700" />
-
 
 4. Move the macro into this user macros location. Alternatively, just copy the text in the .FCMacro macro in this repository, then, in FreeCAD, select Macro > Macros > Create > name the file > paste > save > run.
 
@@ -58,7 +58,7 @@ The cutout shown above employed hollowing to accelerate printing time and diverg
 3. I have not set up any automation on this part as every clinic's got a different flow and printer here, but this is probably the easiest part.
 
 ## Pour
-1. Place your frame on top of the printed mold. Weigh the corners of the frame down. Pour as normal
-2. Once cold, extract the 3d printed mold from the cerrobend cutout. The easiest way is to break the 3d printed flat base off, so that all that remains in the frame is the walls of the cutouts. Then, use a punch and hammer to punch the cutout down and out of the frame. This will take a lot of force if using vertical walls, as the 3D printed cutouts are far stiffer and harder than the normal Styrofoam cutouts. Alternatively, if diverging cutouts were selected, a small tap should easily eject it from the frame.
+1. Place your frame on top of the printed mold. Weigh the corners of the frame down. Pour as normal.
+2. Once cold, extract the 3d printed mold from the cerrobend cutout. The easiest way is to break the 3d printed flat base off, so that all that remains in the frame is the walls of the cutouts. Then, use a punch and hammer to punch the cutout down and out of the frame. This will take a lot of force if using vertical walls, as the 3D printed cutouts are far stiffer and harder than the normal Styrofoam cutouts. Alternatively, if diverging cutouts were selected, a much lighter tap should easily eject it from the frame. I highly recommend diverging cuts for ease of extraction alone.
 
 ALL OUTPUTS MUST BE CHECKED FOR CORRECTNESS BY TRAINED PROFESSIONALS. THIS SOFTWARE DOES NOT CLAIM OR IMPLY ACCURACY OR SUITABILITY FOR CLINICAL USE. THE AUTHOR OF THIS CODE ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS CODE.
