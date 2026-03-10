@@ -39,7 +39,7 @@ Most 6x6 and 10x10 prints are complete in under 2 hours. With the correct STL an
 2. Click Macro > Macros in the top left.
 3. Select CutoutToSTL.FCMacro, then the Execute button in the top right of the dialog.
 4. A dialog asking for wall thickness, if desired, will appear. Entering a nonzero positive number will make FreeCAD attempt to hollow out the apertures so it prints faster. Do not make the wall thicker than the smallest diameter of your cutout / 2 - in fact, don't get close to that. I have found that a 10 mm wall and 20% infill is rock solid during the pour. The hollowing function is very brittle, so this step may give bad results or cause the script to fail. If you just want to leave your cutouts solid, just hit enter and leave the number at 0.
-5. Another dialog will appear, asking if you want to attempt a diverging cut. This can improve penumbra and make the 3d print easier to extract from the poured cerrobend cutout.
+5. Another dialog will appear, asking if you want to attempt a diverging cut. I HIGHLY recommend diverging cuts, as it makes it FAR easier to extract the hard 3D printed mold from the cerrobend at the end.
 6. If yes, another dialog appears, asking for the source to slot distance. Default is 95 cm, which should be correct for Varian machines.
 7. An import dialog appears. Select one of your cutout SVG files.
 8. Another dialog appears titled "Select module". Select "SVG as geometry (importSVG).
@@ -56,5 +56,9 @@ The cutout shown above employed hollowing to accelerate printing time and diverg
 1. Import your .STL file(s) to the slicer software to generate instructions the 3D printer can understand.
 2. Take your sliced file(s) (probably gcode unless you have some proprietary stuff going on) to your 3D printer and print!
 3. I have not set up any automation on this part as every clinic's got a different flow and printer here, but this is probably the easiest part.
+
+## Pour
+1. Place your frame on top of the printed mold. Weigh the corners of the frame down. Pour as normal
+2. Once cold, extract the 3d printed mold from the cerrobend cutout. The easiest way is to break the 3d printed flat base off, so that all that remains in the frame is the walls of the cutouts. Then, use a punch and hammer to punch the cutout down and out of the frame. This will take a lot of force if using vertical walls, as the 3D printed cutouts are far stiffer and harder than the normal Styrofoam cutouts. Alternatively, if diverging cutouts were selected, a small tap should easily eject it from the frame.
 
 ALL OUTPUTS MUST BE CHECKED FOR CORRECTNESS BY TRAINED PROFESSIONALS. THIS SOFTWARE DOES NOT CLAIM OR IMPLY ACCURACY OR SUITABILITY FOR CLINICAL USE. THE AUTHOR OF THIS CODE ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS CODE.
