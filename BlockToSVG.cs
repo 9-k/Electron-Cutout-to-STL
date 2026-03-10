@@ -46,7 +46,7 @@ namespace VMS.TPS
                             300, 300);
                 
                 // The tallest the svg could possibly be is 25 cm * 10 mm/cm * 0.95 divergence scaling
-                // + 2 * (12 mm for frame + 4mm for default metal insert in frame) + index thickness, t_wall, 2 mm
+                // + 2 * (12.5 mm for frame + 4mm for default metal insert in frame) + index thickness, t_wall, 2 mm
                 // = 271.5. So, 300 is round and covers safely. 
             }
         }
@@ -149,15 +149,15 @@ namespace VMS.TPS
         /// <returns></returns>
         public Point[][] IndexingPlate(double x_cm, double y_cm, double divergenceScaling, double t_wall)
         {
-            // the frame is 12 mm cross-plane wide...
+            // the frame is 12.5 mm cross-plane wide...
             // then there's 3 mm of remaining metal (4 mm if it's 25 cone).
             // then you multiply by 2 for both sides. learned that the hard way. doh.
             // slot is 91 mm wide unless 6 cone, in which case it's 53 mm.
             double metalMargin_mm = x_cm == 25.0 ? 4.0 : 3.0;
             double slotwidth_mm = x_cm == 6.0 ? 53.0 : 91.0;
 
-            double x_mm = x_cm * 10 * divergenceScaling + 2 * (12.0 + metalMargin_mm);
-            double y_mm = y_cm * 10 * divergenceScaling + 2 * (12.0 + metalMargin_mm);
+            double x_mm = x_cm * 10 * divergenceScaling + 2 * (12.5 + metalMargin_mm);
+            double y_mm = y_cm * 10 * divergenceScaling + 2 * (12.5 + metalMargin_mm);
 
             double hx = x_mm / 2;
             double hy = y_mm / 2;
@@ -229,7 +229,6 @@ namespace VMS.TPS
 
             File.WriteAllText(filename, sb.ToString());
         }
-
 
         /// <summary>
         /// Appends the first point to the end of the point array, if it's not already there, to ensure closedness of the polyline.
