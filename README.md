@@ -38,7 +38,7 @@ Most 6x6 and 10x10 prints are complete in under 2 hours. With the correct STL an
 1. Open FreeCAD.
 2. Click Macro > Macros in the top left.
 3. Select CutoutToSTL.FCMacro, then the Execute button in the top right of the dialog.
-4. A dialog asking for wall thickness, if desired, will appear. Entering a nonzero positive number will make FreeCAD attempt to hollow out the apertures so it prints faster. Do not make the wall thicker than the smallest diameter of your cutout / 2 - in fact, don't get close to that. I have found that 10 mm doesn't bend much for a 6x6, at least. 20% infill while printing is also sufficent. The hollowing function is very brittle, so this step may give bad results or cause the script to fail. If you just want to leave your cutouts solid, just hit enter and leave the number at 0.
+4. A dialog asking for wall thickness, if desired, will appear. Entering a nonzero positive number will make FreeCAD attempt to hollow out the apertures so it prints faster. Do not make the wall thicker than the smallest diameter of your cutout / 2 - in fact, don't get close to that. I have found that a 10 mm wall and 20% infill is rock solid during the pour. The hollowing function is very brittle, so this step may give bad results or cause the script to fail. If you just want to leave your cutouts solid, just hit enter and leave the number at 0.
 5. Another dialog will appear, asking if you want to attempt a diverging cut. This can improve penumbra and make the 3d print easier to extract from the poured cerrobend cutout.
 6. If yes, another dialog appears, asking for the source to slot distance. Default is 95 cm, which should be correct for Varian machines.
 7. An import dialog appears. Select one of your cutout SVG files.
