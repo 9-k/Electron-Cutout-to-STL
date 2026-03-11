@@ -112,14 +112,20 @@ doc = App.ActiveDocument
 ##### 2. PAD INDEXING PLATE #####
 pads = []
 
-base = extrude_wire("Polyline", z_base, "Base")
+base = extrude_wire("Polyline", -z_base, "Base")
 pads.append(base)
 
 left_index = extrude_wire("Polyline001", z_index, "LeftIndex")
+left_index_base = extrude_wire("Polyline001", -z_base, "LeftIndexBase")
+
 right_index = extrude_wire("Polyline002", z_index, "RightIndex")
+right_index_base = extrude_wire("Polyline001", -z_base, "RightIndexBase")
 
 pads.append(left_index)
+pads.append(left_index_base)
+
 pads.append(right_index)
+pads.append(right_index_base)
 
 ##### END 2. PAD INDEXING PLATE #####
 
@@ -201,7 +207,11 @@ for obj in doc.Objects:
             # Inner loft
             # -----------------
             if lower_inner_wire:
-
+                
+                inner_base_cutter = extrude_wire(lower_inner_wire.Name, -z_base, "BaseCutter")
+                base.Shape = base.Shape.cut(inner_base_cutter)
+                doc.removeObject(inner_base_cutter.Name)
+                
                 inner_shape = Part.makeLoft(
                     [lower_inner_wire, upper_inner_wire],
                     True
@@ -212,13 +222,6 @@ for obj in doc.Objects:
             hollow_obj = doc.addObject("Part::Feature", name)
             hollow_obj.Shape = final_shape
             final_pad = hollow_obj
-
-            # subtract inner from base if present
-            if inner_shape:
-                try:
-                    base.Shape = base.Shape.cut(inner_shape)
-                except Exception:
-                    pass
 
             doc.removeObject(outer_pad.Name)
 
